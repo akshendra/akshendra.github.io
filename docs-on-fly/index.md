@@ -214,7 +214,7 @@ The result,
 
 ![ReDoc rendered documentation](https://i.imgur.com/QN1LULM.gif)
 
-> There are more components to OpenAPI and `swagger-jsdoc` which make the process easier. You can write definitions for schemas/requests/responses that are used more than once and then use them in the docs. Check out [Components Section | Swagger](https://swagger.io/docs/specification/components/) and [Getting Started | Swagger JSDoc](https://github.com/Surnet/swagger-jsdoc/blob/master/docs/GETTING-STARTED.md) to define them in a JavaScripty way.
+> There are more components to OpenAPI and `swagger-jsdoc` which make the process easier. You can write definitions for schemas/requests/responses that are used more than once and then use them in the docs. Check out [Components Section - Swagger](https://swagger.io/docs/specification/components/) and [Getting Started - Swagger JSDoc](https://github.com/Surnet/swagger-jsdoc/blob/master/docs/GETTING-STARTED.md) to define them in a JavaScripty way.
 
 > Code can be found [here](https://github.com/akshendra/akshendra.github.io/tree/master/docs-on-fly/code)
 
