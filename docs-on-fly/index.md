@@ -87,7 +87,7 @@ app.get('/list', (req, res) => {
 
 The first line is `@swagger` which helps `swagger-jsdoc` identify this comment block as swagger (OpenAPI) specification. Next few lines define the path, the method, a little summary, and description. `tags` are used to group the APIs.
 
-The expected parameters, both `query` and `path` are described next. Our `/list` API expects an optional sort query parameter, which is used to decide whether the list of animals should be sorted or not, before sending.
+The expected parameters, both `query` and `path` are described next. Our `/list` API expects an optional `sort` query parameter, which is used to decide whether the list of animals should be sorted or not, before sending.
 
 Then we define the response. Status coming first, a little description and then the schema of the response. We are returning JSON here. However, it is easy to document other content types as well.
 
