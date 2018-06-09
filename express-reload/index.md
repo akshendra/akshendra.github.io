@@ -155,7 +155,7 @@ function start() {
     state.sockets.push(socket);
   });
 }
-At the end will destroy all the sockets.
+// At the end will destroy all the sockets.
 state.sockets.forEach((socket, index) => {
   debug('Destroying socket', index + 1);
   if (socket.destroyed === false) {
