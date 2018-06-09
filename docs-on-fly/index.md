@@ -1,4 +1,9 @@
-# Generating API docs on fly using `swagger-jsdoc` and `redoc`  for express server
+---
+title: Generating documentation on the fly in expressjs
+published: true
+description: 
+tags: node, webdev, express
+---
 
 Before starting a few words about the components we will be using
 
