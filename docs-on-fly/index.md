@@ -1,20 +1,20 @@
 ---
-title: Generating documentation on the fly in expressjs
+title: Generating documentation on the fly in express
 published: false
 description: 
 tags: node, webdev, express
 ---
 
 
-I little while ago, I decided to generate docs for some HTTP APIs I was about to build. The APIs were going to be used internally, so I didn't want to commit to any of the online solutions, like [API Blueprint](https://apiblueprint.org/), [Apiary](https://apiary.io/) or [Swagger](https://swagger.io/). And setting up something from scratch would have been, bit much. Also, I wanted the docs integrated within the code, avoiding any kind of context switch, just to write documentation.
+I little while ago, I decided to generate docs for some HTTP APIs I was about to build. The APIs were going to be used internally, so I didn't want to commit to any of the online solutions, like [API Blueprint](https://apiblueprint.org/), [Apiary](https://apiary.io/) or [Swagger](https://swagger.io/). And setting up something from scratch would have been, ... bit much. Also, I wanted the docs integrated within the code, avoiding any kind of context switch just to write documentation.
 
 
-I was aware of `jsdoc` and `esdoc`, both of them allows us to write documentation in comments. However, their job is to document javascript code, and not HTTP APIs. Then, I found a tool [`swagger-jsdoc`](`https://github.com/Surnet/swagger-jsdoc`), which genrates swagger / openapi specification from comments. This was just what I was looking for.
+I was aware of `jsdoc` and `esdoc`, both of them allows us to write documentation in comments. However, their job is to document javascript code and not HTTP APIs. Then, I found a tool [`swagger-jsdoc`](`https://github.com/Surnet/swagger-jsdoc`), which generates swagger / OpenAPI specification from comments. This was just what I was looking for.
 
 
 ### Let's see some `code` now
 
-Just a simple server that list animals and you can add your favorite animal too. _Quite a novel concept_.
+Just a simple server that lists animals and you can add your favorite animal too. _Quite a novel concept_.
 
 ```js
 const express = require('express');
@@ -45,7 +45,7 @@ app.listen(3000, () => {
 });
 ```
 
-`swagger-jsdoc` requires comments to follow [OpenAPI Specification](https://swagger.io/docs/specification/about/), which is quite intutive.
+`swagger-jsdoc` requires comments to follow [OpenAPI Specification](https://swagger.io/docs/specification/about/), which is quite intuitive.
 
 Adding documentation comments for `/list` route.
 
@@ -85,11 +85,11 @@ app.get('/list', (req, res) => {
 
 ```
 
-First line is `@swagger` which helps `swagger-jsdoc` indentify this comment block as swagger (OpenAPI) specification. Next few lines define the, the path, then method, a little summary and description. `tags` are used to group the APIs.
+The first line is `@swagger` which helps `swagger-jsdoc` identify this comment block as swagger (OpenAPI) specification. Next few lines define the path, the method, a little summary, and description. `tags` are used to group the APIs.
 
-The expected parameters, `query` and `path` are described next. Our `/list` API, expects an optional sort query parameter, which is used to decided whether the list of animals should be sorted or not, before sending.
+The expected parameters, both `query` and `path` are described next. Our `/list` API expects an optional sort query parameter, which is used to decide whether the list of animals should be sorted or not, before sending.
 
-Then we define the response. Status coming first, a little description and then the schema of the resopnse. We are returning JSON here. However, its easy to document other content types as well.
+Then we define the response. Status coming first, a little description and then the schema of the response. We are returning JSON here. However, it is easy to document other content types as well.
 
 Same we will do for the `/add` request.
 
@@ -169,7 +169,7 @@ app.get('/swagger.json', (req, res) => {
 // other routes
 ```
 
-This will server a swagger specification at `/swagger.json`. All that is left to do is render this spec in a more human friendly way. I choose [ReDoc](https://github.com/Rebilly/ReDoc) for that. It has a simple setup.
+This will serve a swagger specification at `/swagger.json`. All that is left to do is render this spec in a more human-friendly way. I choose [ReDoc](https://github.com/Rebilly/ReDoc) for that. It has a simple setup.
 
 Include an HTML file
 
@@ -202,7 +202,7 @@ Include an HTML file
 </html>
 ```
 
-We have set the `http://localhost:3000/docs/swagger.json` as the place to server JSON specification already. Let's setup a route to serve this HTML as well.
+We have set the `http://localhost:3000/docs/swagger.json` as the place to server JSON specification already. Let's set up a route to serve this HTML as well.
 
 ```js
 app.get('/docs', (req, res) => {
@@ -214,6 +214,7 @@ The result,
 
 ![ReDoc rendered documentation](https://i.imgur.com/QN1LULM.gif)
 
-> There is ofcourse more components to OpenAPI and `swagger-jsdoc` to make the process easier. You can write definitons for schemas / requests / reposnses that are used more than once and then use them in the docs. Check out  https://swagger.io/docs/specification/components/ and https://github.com/Surnet/swagger-jsdoc/blob/master/docs/GETTING-STARTED.md to define them in a JavaScripty way.
+> There are more components to OpenAPI and `swagger-jsdoc` which make the process easier. You can write definitions for schemas/requests/responses that are used more than once and then use them in the docs. Check out [Components Section | Swagger](https://swagger.io/docs/specification/components/) and [Getting Started | Swagger JSDoc](https://github.com/Surnet/swagger-jsdoc/blob/master/docs/GETTING-STARTED.md) to define them in a JavaScripty way.
+
 > Code can be found [here](https://github.com/akshendra/akshendra.github.io/tree/master/docs-on-fly/code)
 
