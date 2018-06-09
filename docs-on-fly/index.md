@@ -1,6 +1,6 @@
 ---
 title: Generating documentation on the fly in express
-published: false
+published: true
 description: 
 tags: node, webdev, express
 ---
