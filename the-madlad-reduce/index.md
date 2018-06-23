@@ -1,11 +1,11 @@
 ---
 title: The beast that is `Array.prototype.reduce`
-published: false
+published: true
 description: 
 tags: node, javascript, reduce, functional
 ---
 
-`reduce()` is an absolute beast of a method when it comes to functional style programming in JavaScript. The more you use it, the more you see use cases popping for it. I realized recently that, it has become my goto method, whenever I have to deal with arrays. So I looked through a lot of my code and found a lot of examples, some of which I will list in this post. But before that - lets start with a short review the method itself.
+`reduce()` is an absolute beast of a method when it comes to functional style programming in JavaScript. The more you use it, the more you see use cases popping everywhere for it. I realized recently, that it has become my goto method, whenever I have to deal with arrays. So I looked through a some of my code and found a lot of examples, some of which I will list in this post. But before that - lets start with a short review the method itself.
 
 
 ### Signature
@@ -17,31 +17,30 @@ arr.reduce((acc, current, index, array) => {
 ```
 
 `reduce()` takes two parameters.
-- A `callback` function, would be the first. `reduce()` will go through every element of the array and passing this `callback` the following values.
-  - `acc` or accumulator, this value is like state, that gets updated on every call to keep track of the result
+- A `callback` function, would be the first. `reduce()` will go through every element of the array and pass `callback` the following values.
+  - `acc` or accumulator, this value is like state that gets updated on every call to keep track of the result
     - For the first call, it is equal to `initial` value provided as second parameter.
     - And in subsequent calls, `acc` will the value returned by the previous `callback` call.
   - `current`, the element of the array we are dealing with.
   - `index`, the current index of array
   - `array`, the array itself
-- The second parameter is `initial`, the first value of `acc`. This is optional and in case it is not provided, `acc` will start of as `undefined`.
+- The second parameter is `initial`, the first value of `acc`. This is optional and in case it is not provided, `acc` will be the first element of the array .
 
 
 ### Simple example
 
-A very common example of `reduce()`, is to calculate the sum of an array of integers.
+A very common example of `reduce()` is to calculate the sum of an array of integers.
 
 ```js
 [1, 2, 3, 4, 5].reduce((sum, integer) => sum + integer, 0);
 ```
 
-In this example we don't need `index` and `array`, which is case in general with `reduce()`. And `acc`, `current` and `initial` play the parts of `acc`, `current` and `0` respectively.
+In this example, we don't need `index` and `array`, which is a case in general with `reduce()`. And `sum`, `integer` and `0` play the parts of `acc`, `current` and `initial` respectively.
 
 
 ### Now some practical examples
 
-These are some different sort of the examples I have found through out my code. Some of them might not be very smart as they are from the olden times and unmaintained codebases. I have still kept them, because they were showing a different use case. So, please have some mercy.
-
+I mentioned above that I went through some of my code to find examples of `reduce()`. I have listed below some of those which were different enough to represent a new use case.
 
 #### 1. Reducing to a boolean
 
@@ -56,7 +55,9 @@ return watching.reduce((acc, curr) => {
 
 #### 2. Converting an array of objects into a map using a specific property / key of the objects
 
-I have an array of objects that I received from a database. But I want to convert them into a simple object based map for later processing. All these objects have a common structure and a key that stores a unique identifier (primary key).
+I have an array of objects that I received from a database. But I want to convert them into a `pojo` map for later processing. All these objects have a common structure and a key that stores a unique identifier (primary key).
+
+> Note: I have trimmed the project specific code from these examples to keep the short
 
 Example of data,
 ```js
@@ -95,7 +96,7 @@ function makeMap(docs, key) {
 }
 ```
 
-We can now call the function like, `makeMap(docs, 'id')`, to build the map we desire.
+We can now call the this function using `makeMap(docs, 'id')`, to build the map we desire.
 
 
 #### 3. Flatten an array of arrays
@@ -115,7 +116,7 @@ flatten([['1', '2'], ['3', 4], [{}, []]]) // => [ '1', '2', '3', 4, {}, [] ]
 
 #### 4. Doing the job of `filter()` - quite unnecessary :)
 
-From an array of players, which players have valid ids (`mongoId` here).
+From an array of players, filter those with with valid ids (`mongoId` here).
 
 ```js
 game.players.reduce((acc, val) => {
@@ -131,7 +132,7 @@ game.players.reduce((acc, val) => {
 
 `Object.assign` copies values from source objects to given object, but it does a shallow copy and also mutates the given object.
 
-I want a function ª`deepAssign`) that would do a deep copy and would not mutate the given object.
+I want a function (`deepAssign`), that would do a deep copy and would not mutate the given object.
 
 ```js
 const source = {
@@ -193,16 +194,17 @@ function deepAssign(object, update, level = 0) {
 }
 ```
 
-We are using recursion here and don't want to kill the `stack`, hence a simple check for, how many levels deep inside the source object we should care about.
+We are using recursion here and don't want to kill the `stack`, hence a simple check for - how many levels deep inside the source object we should care about.
 
 
 #### 6. Chaining Promises
 
-I have four async functions that have to executed in series, feeding the result of the previous function into next.
+I have four async functions that have to be executed in series, feeding the result of the previous function into next.
 
 ```js
 const arr = [fetchData, updateData, postData, showData];
 const response = arr.reduce((acc, current) => {
+  // (cue alarm sirens) no error handling
   return acc.then(current));
 }, Promise.resolve(userId));
 
@@ -211,4 +213,6 @@ response.then(data => {
 });
 ```
 
-> This does not have error handling.
+That's pretty much it folks. I found several more examples, however they were following the same story as one of the six above, with a twist or two.
+
+Thanks for reading and if you have any magical use case of `reduce()` or if I have made any mistake in this post, I would love to know.
