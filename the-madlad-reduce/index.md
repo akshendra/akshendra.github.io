@@ -5,7 +5,9 @@ description:
 tags: node, javascript, reduce, functional
 ---
 
-`reduce()` is an absolute beast of a method when it comes to functional style programming in JavaScript. The more you use it, the more you see use cases popping everywhere for it. I realized recently, that it has become my goto method, whenever I have to deal with arrays. So I looked through a some of my code and found a lot of examples, some of which I will list in this post. But before that - lets start with a short review the method itself.
+`reduce()` is an absolute beast of a method when it comes to functional style programming in JavaScript. The more you use it, the more you see use cases popping everywhere for it.
+
+I recently realized, that it has become my goto method, whenever I have to deal with arrays. So I looked through bunch of my code and found a lot of examples, some of which I will list in this post. But before that - lets start with a short review the method itself.
 
 
 ### Signature
@@ -20,11 +22,11 @@ arr.reduce((acc, current, index, array) => {
 - A `callback` function, would be the first. `reduce()` will go through every element of the array and pass `callback` the following values.
   - `acc` or accumulator, this value is like state that gets updated on every call to keep track of the result
     - For the first call, it is equal to `initial` value provided as second parameter.
-    - And in subsequent calls, `acc` will the value returned by the previous `callback` call.
+    - And in subsequent calls, `acc` will be the value returned by the previous `callback` call.
   - `current`, the element of the array we are dealing with.
   - `index`, the current index of array
   - `array`, the array itself
-- The second parameter is `initial`, the first value of `acc`. This is optional and in case it is not provided, `acc` will be the first element of the array .
+- The second parameter is `initial`, the first value of `acc`. This is optional and in case it is not provided, `acc` will be the first element of the array.
 
 
 ### Simple example
@@ -40,7 +42,9 @@ In this example, we don't need `index` and `array`, which is a case in general w
 
 ### Now some practical examples
 
-I mentioned above that I went through some of my code to find examples of `reduce()`. I have listed below some of those which were different enough to represent a new use case.
+I mentioned above that I went through some of my code to find examples of `reduce()`. I have listed below some of those, which were different enough to represent a new use case.
+
+> I have trimmed the project specific code from these examples to keep the short
 
 #### 1. Reducing to a boolean
 
@@ -55,9 +59,8 @@ return watching.reduce((acc, curr) => {
 
 #### 2. Converting an array of objects into a map using a specific property / key of the objects
 
-I have an array of objects that I received from a database. But I want to convert them into a `pojo` map for later processing. All these objects have a common structure and a key that stores a unique identifier (primary key).
+I have an array of objects that I received from a database. But I want to convert them into a simple map for later processing. All these objects have a common structure and a key that stores a unique identifier (primary key).
 
-> Note: I have trimmed the project specific code from these examples to keep the short
 
 Example of data,
 ```js
@@ -101,7 +104,7 @@ We can now call the this function using `makeMap(docs, 'id')`, to build the map 
 
 #### 3. Flatten an array of arrays
 
-A very common case. I have an array of arrays and I want to combine their results in a single array.
+A very common case. I have an array of arrays and I want to combine them into a single array.
 
 ```js
 function flatten(arr) {
@@ -213,6 +216,9 @@ response.then(data => {
 });
 ```
 
-That's pretty much it folks. I found several more examples, however they were following the same story as one of the six above, with a twist or two.
 
-Thanks for reading and if you have any magical use case of `reduce()` or if I have made any mistake in this post, I would love to know.
+### That's pretty much it folks. 
+
+I found several more examples, however they were following more or less the same storylines with a twist or two of their own.
+
+Finally, thanks for reading and if you have any magical use case of `reduce()` or if I have made any mistake in this post, I would love to know.
