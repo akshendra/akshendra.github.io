@@ -1,7 +1,7 @@
 ---
 title: Reloading the express server without nodemon
 published: true
-description: 
+description:
 tags: node, webdev, express
 ---
 
