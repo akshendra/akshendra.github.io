@@ -1,9 +1,10 @@
 ---
 title: Iterators in JavaScript
-published: false
+published: true
 description:
 tags: node, javascript, js, iterators
 ---
+
 
 Many a times you wake up and realize that today you will be traversing through an array or maybe many arrays. But you don't worry about it, you have done it before and it wasn't that difficult. You also have a lot of options, you can use the good old loops, or the wonderful `map`, `reduce`, `fitler`. OR you can use the `iterators`.
 
