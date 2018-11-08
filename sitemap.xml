@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://www.akshendra.com/page/things/</loc>
+    <lastmod>2018-11-09T01:32:24+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.akshendra.com/post/madlad-reduce/</loc>
+    <lastmod>2018-06-23T00:59:10+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.akshendra.com/post/docs-on-fly/</loc>
+    <lastmod>2018-06-09T00:59:10+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.akshendra.com/post/express-reload/</loc>
+    <lastmod>2018-06-05T00:59:10+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.akshendra.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.akshendra.com/page/</loc>
+    <lastmod>2018-11-09T01:32:24+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.akshendra.com/post/</loc>
+    <lastmod>2018-06-23T00:59:10+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.akshendra.com/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.akshendra.com/</loc>
+    <lastmod>2018-11-09T01:32:24+05:30</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on ^_^</title>
+    <link>https://www.akshendra.com/page/</link>
+    <description>Recent content in Pages on ^_^</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>meine@akshendra.com (Akshendra Pratap Singh)</managingEditor>
+    <webMaster>meine@akshendra.com (Akshendra Pratap Singh)</webMaster>
+    <lastBuildDate>Fri, 09 Nov 2018 01:32:24 +0530</lastBuildDate>
+    
+	<atom:link href="https://www.akshendra.com/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Things</title>
+      <link>https://www.akshendra.com/page/things/</link>
+      <pubDate>Fri, 09 Nov 2018 01:32:24 +0530</pubDate>
+      <author>meine@akshendra.com (Akshendra Pratap Singh)</author>
+      <guid>https://www.akshendra.com/page/things/</guid>
+      <description> Habitual  A simple habbit tracker for daily activites. Using  VueJS Vuex  Github: https://github.com/akshendra/habitual  Cryptonium  A chrome new tab extension that shows CryptoCurreny prices Using  ReactJs Redux   Serene  Clean conky (linux desktop widges) theme Using  Lua Python  Github: https://github.com/akshendra/Serene-Conky  MapOfEnv  A npm package to map environment variables to JS types Github: https://github.com/akshendra/mapofenv  </description>
+    </item>
+    
+  </channel>
+</rss>
