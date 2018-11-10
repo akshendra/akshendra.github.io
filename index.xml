@@ -32,6 +32,16 @@ Primarily, I work as a Backend Developer at Quizizz.com (really amazing website 
     </item>
     
     <item>
+      <title>Iterators in JavaScript</title>
+      <link>https://www.akshendra.com/post/iterators/</link>
+      <pubDate>Sun, 29 Jul 2018 00:59:10 +0530</pubDate>
+      <author>meine@akshendra.com (Akshendra Pratap Singh)</author>
+      <guid>https://www.akshendra.com/post/iterators/</guid>
+      <description>Many a times you wake up and realize that today you will be traversing through an array or maybe many arrays. But you don&amp;rsquo;t worry about it, you have done it before and it wasn&amp;rsquo;t that difficult. You also have a lot of options, you can use the good old loops, or the wonderful map, reduce, fitler. OR you can use the iterators.
+Iterator is a design pattern that allows us to traverse over a list or collection.</description>
+    </item>
+    
+    <item>
       <title>The beast that is `Array.prototype.reduce`</title>
       <link>https://www.akshendra.com/post/madlad-reduce/</link>
       <pubDate>Sat, 23 Jun 2018 00:59:10 +0530</pubDate>

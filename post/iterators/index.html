@@ -7,15 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>The beast that is `Array.prototype.reduce` - ^_^</title>
-  <meta property="og:title" content="The beast that is `Array.prototype.reduce`" />
-  <meta name="twitter:title" content="The beast that is `Array.prototype.reduce`" />
-  <meta name="description" content="reduce() is an absolute beast of a method when it comes to functional style programming in JavaScript. The more you use it, the more you see use cases popping everywhere for it.
-I recently realized, that it has become my goto method, whenever I have to deal with arrays. So I looked through bunch of my code and found a lot of examples, some of which I will list in this post.">
-  <meta property="og:description" content="reduce() is an absolute beast of a method when it comes to functional style programming in JavaScript. The more you use it, the more you see use cases popping everywhere for it.
-I recently realized, that it has become my goto method, whenever I have to deal with arrays. So I looked through bunch of my code and found a lot of examples, some of which I will list in this post.">
-  <meta name="twitter:description" content="reduce() is an absolute beast of a method when it comes to functional style programming in JavaScript. The more you use it, the more you see use cases popping everywhere for it.
-I recently realized, …">
+  <title>Iterators in JavaScript - ^_^</title>
+  <meta property="og:title" content="Iterators in JavaScript" />
+  <meta name="twitter:title" content="Iterators in JavaScript" />
+  <meta name="description" content="Many a times you wake up and realize that today you will be traversing through an array or maybe many arrays. But you don&rsquo;t worry about it, you have done it before and it wasn&rsquo;t that difficult. You also have a lot of options, you can use the good old loops, or the wonderful map, reduce, fitler. OR you can use the iterators.
+Iterator is a design pattern that allows us to traverse over a list or collection.">
+  <meta property="og:description" content="Many a times you wake up and realize that today you will be traversing through an array or maybe many arrays. But you don&rsquo;t worry about it, you have done it before and it wasn&rsquo;t that difficult. You also have a lot of options, you can use the good old loops, or the wonderful map, reduce, fitler. OR you can use the iterators.
+Iterator is a design pattern that allows us to traverse over a list or collection.">
+  <meta name="twitter:description" content="Many a times you wake up and realize that today you will be traversing through an array or maybe many arrays. But you don&rsquo;t worry about it, you have done it before and it wasn&rsquo;t that …">
   <meta name="author" content="Akshendra Pratap Singh"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -51,8 +50,8 @@ I recently realized, …">
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https://www.akshendra.com/post/madlad-reduce/",
-          "name": "The beast that is ` array.prototype.reduce`"
+          "@id": "https://www.akshendra.com/post/iterators/",
+          "name": "Iterators in java script"
         }
     }]
 }
@@ -63,16 +62,16 @@ I recently realized, …">
   "author": {
     "name" : "Akshendra Pratap Singh"
   },
-  "headline": "The beast that is `Array.prototype.reduce`",
-  "description" : "reduce() is an absolute beast of a method when it comes to functional style programming in JavaScript. The more you use it, the more you see use cases popping everywhere for it.
-I recently realized, that it has become my goto method, whenever I have to deal with arrays. So I looked through bunch of my code and found a lot of examples, some of which I will list in this post.",
+  "headline": "Iterators in JavaScript",
+  "description" : "Many a times you wake up and realize that today you will be traversing through an array or maybe many arrays. But you don&amp;rsquo;t worry about it, you have done it before and it wasn&amp;rsquo;t that difficult. You also have a lot of options, you can use the good old loops, or the wonderful map, reduce, fitler. OR you can use the iterators.
+Iterator is a design pattern that allows us to traverse over a list or collection.",
   "inLanguage" : "en",
-  "wordCount": 938,
-  "datePublished" : "2018-06-23T00:59:10",
-  "dateModified" : "2018-06-23T00:59:10",
+  "wordCount": 664,
+  "datePublished" : "2018-07-29T00:59:10",
+  "dateModified" : "2018-07-29T00:59:10",
   "image" : "https://www.akshendra.com/images/octocat.png",
   "keywords" : [ "" ],
-  "mainEntityOfPage" : "https://www.akshendra.com/post/madlad-reduce/",
+  "mainEntityOfPage" : "https://www.akshendra.com/post/iterators/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https://www.akshendra.com",
@@ -86,16 +85,15 @@ I recently realized, that it has become my goto method, whenever I have to deal 
 }
 </script>
 
-<meta property="og:title" content="The beast that is `Array.prototype.reduce`" />
-<meta property="og:description" content="reduce() is an absolute beast of a method when it comes to functional style programming in JavaScript. The more you use it, the more you see use cases popping everywhere for it.
-I recently realized, that it has become my goto method, whenever I have to deal with arrays. So I looked through bunch of my code and found a lot of examples, some of which I will list in this post.">
+<meta property="og:title" content="Iterators in JavaScript" />
+<meta property="og:description" content="Many a times you wake up and realize that today you will be traversing through an array or maybe many arrays. But you don&rsquo;t worry about it, you have done it before and it wasn&rsquo;t that difficult. You also have a lot of options, you can use the good old loops, or the wonderful map, reduce, fitler. OR you can use the iterators.
+Iterator is a design pattern that allows us to traverse over a list or collection.">
 <meta property="og:image" content="https://www.akshendra.com/images/octocat.png" />
-<meta property="og:url" content="https://www.akshendra.com/post/madlad-reduce/" />
+<meta property="og:url" content="https://www.akshendra.com/post/iterators/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="^_^" />
-  <meta name="twitter:title" content="The beast that is `Array.prototype.reduce`" />
-  <meta name="twitter:description" content="reduce() is an absolute beast of a method when it comes to functional style programming in JavaScript. The more you use it, the more you see use cases popping everywhere for it.
-I recently realized, …">
+  <meta name="twitter:title" content="Iterators in JavaScript" />
+  <meta name="twitter:description" content="Many a times you wake up and realize that today you will be traversing through an array or maybe many arrays. But you don&rsquo;t worry about it, you have done it before and it wasn&rsquo;t that …">
   <meta name="twitter:image" content="https://www.akshendra.com/images/octocat.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@akshendr" />
@@ -106,7 +104,7 @@ I recently realized, …">
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@akshendr" />
   <meta name="twitter:creator" content="@akshendr" />
-  <meta property="og:url" content="https://www.akshendra.com/post/madlad-reduce/" />
+  <meta property="og:url" content="https://www.akshendra.com/post/iterators/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="^_^" />
 
@@ -246,7 +244,7 @@ I recently realized, …">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>The beast that is `Array.prototype.reduce`</h1>
+                <h1>Iterators in JavaScript</h1>
               
               
               
@@ -254,13 +252,13 @@ I recently realized, …">
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on June 23, 2018
+  <i class="fas fa-calendar"></i>&nbsp;Posted on July 29, 2018
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;5&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;938&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;664&nbsp;words
   
   Akshendra Pratap Singh
   
@@ -284,207 +282,130 @@ I recently realized, …">
       <article role="main" class="blog-post">
         
 
-<p><code>reduce()</code> is an absolute beast of a method when it comes to functional style programming in JavaScript. The more you use it, the more you see use cases popping everywhere for it.</p>
+<p>Many a times you wake up and realize that today you will be traversing through an array or maybe many arrays. But you don&rsquo;t worry about it, you have done it before and it wasn&rsquo;t that difficult. You also have a lot of options, you can use the good old loops, or the wonderful <code>map</code>, <code>reduce</code>, <code>fitler</code>. OR you can use the <code>iterators</code>.</p>
 
-<p>I recently realized, that it has become my goto method, whenever I have to deal with arrays. So I looked through bunch of my code and found a lot of examples, some of which I will list in this post. But before that - lets start with a short review the method itself.</p>
+<p><code>Iterator</code> is a design pattern that allows us to traverse over a list or collection. In JavaScript, like most things, they are implemented as objects. Before going in detail, here is a simple example.</p>
 
-<h3 id="signature">Signature</h3>
+<pre><code class="language-js">const arr = [1, 2, 3, 4, 5];
 
-<pre><code class="language-js">arr.reduce((acc, current, index, array) =&gt; {
-  // work goes here
-}, initial);
+for (const num of arr) {
+  console.log(num);
+}
 </code></pre>
 
-<p><code>reduce()</code> takes two parameters.
-- A <code>callback</code> function, would be the first. <code>reduce()</code> will go through every element of the array and pass <code>callback</code> the following values.
-  - <code>acc</code> or accumulator, this value is like state that gets updated on every call to keep track of the result
-    - For the first call, it is equal to <code>initial</code> value provided as second parameter.
-    - And in subsequent calls, <code>acc</code> will be the value returned by the previous <code>callback</code> call.
-  - <code>current</code>, the element of the array we are dealing with.
-  - <code>index</code>, the current index of array
-  - <code>array</code>, the array itself
-- The second parameter is <code>initial</code>, the first value of <code>acc</code>. This is optional and in case it is not provided, <code>acc</code> will be the first element of the array.</p>
+<p>Using <code>for..of</code> loop, you can iterate over any <code>object</code> that implements the <code>iterable</code> protocol.</p>
 
-<h3 id="simple-example">Simple example</h3>
+<h3 id="iterable-protocol"><code>Iterable</code> Protocol</h3>
 
-<p>A very common example of <code>reduce()</code> is to calculate the sum of an array of integers.</p>
+<p>To follow this protocol, the object must define a special method <code>@@iterator</code> (as <code>Symbol.iterator</code> key) which takes zero arguments and returns an object which itself should follow the <code>iterator</code> protocol.</p>
 
-<pre><code class="language-js">[1, 2, 3, 4, 5].reduce((sum, integer) =&gt; sum + integer, 0);
-</code></pre>
+<h3 id="iterator-protocol"><code>Iterator</code> Protocol</h3>
 
-<p>In this example, we don&rsquo;t need <code>index</code> and <code>array</code>, which is a case in general with <code>reduce()</code>. And <code>sum</code>, <code>integer</code> and <code>0</code> play the parts of <code>acc</code>, <code>current</code> and <code>initial</code> respectively.</p>
+<p>To follow this protocol, the object must define a method named <code>next</code>, which itself returns an object with two properties:</p>
 
-<h3 id="now-some-practical-examples">Now some practical examples</h3>
-
-<p>I mentioned above that I went through some of my code to find examples of <code>reduce()</code>. I have listed below some of those, which were different enough to represent a new use case.</p>
+<ol>
+<li><code>value</code>: the current item in iteration</li>
+<li><code>done</code>: a boolean, that represents whether the iteration is finished or not. <code>done=true</code> means iteration is finished.</li>
+</ol>
 
 <blockquote>
-<p>I have trimmed the project specific code from these examples to keep the short</p>
+<p>Array, String, Map, Set, TypedArrays follow the iterator protocol.</p>
 </blockquote>
 
-<h4 id="1-reducing-to-a-boolean">1. Reducing to a boolean</h4>
+<h3 id="implementing-the-protocols">Implementing the protocols</h3>
 
-<p>I have a file path (<code>id</code>) and I want to know, if the path belongs to any of the directories or files from the <code>watching</code> array.</p>
+<p>Here is a function that returns an <code>iterable</code> which allows us iterate over first <code>n</code> natural numbers.</p>
 
-<pre><code class="language-js">return watching.reduce((acc, curr) =&gt; {
-  return acc || id.startsWith(path.join(__dirname, curr));
-}, false);
-</code></pre>
+<pre><code class="language-js">function numbers(till = 100) {
+  let i = 0;
+  const iteratorFx = () =&gt; {
+    const iterator = {
+      next() {
+        i += 1;
+        if (i &lt;= till) {
+          return { done: false, value: i };
+        }
+        return { done: true };
+      },
+    };
+    return iterator;
+  };
+  return {
+    [Symbol.iterator]: iteratorFx,
+  };
+}
 
-<h4 id="2-converting-an-array-of-objects-into-a-map-using-a-specific-property-key-of-the-objects">2. Converting an array of objects into a map using a specific property / key of the objects</h4>
-
-<p>I have an array of objects that I received from a database. But I want to convert them into a simple map for later processing. All these objects have a common structure and a key that stores a unique identifier (primary key).</p>
-
-<p>Example of data,</p>
-
-<pre><code class="language-js">// docs array
-const docs = [{
-  id: 'id-1',
-  name: 'K Dilkington',
-  style: 'orange',
-}, {
-  id: 'id-2',
-  name: 'Lanky Fellow',
-  style: 'googly',
-}];
-
-// result
-const result = {
-  'id-1': {
-    id: 'id-1',
-    name: 'K Dilkington',
-    style: 'orange',
-  },
-  'id-2': {
-    id: 'id-2',
-    name: 'Lanky Fellow',
-    style: 'googly',
-  },
-};
-</code></pre>
-
-<pre><code class="language-js">function makeMap(docs, key) {
-  return docs.reduce((map, doc) =&gt; {
-    map[doc[key]] = doc;
-    return map;
-  }, {});
+const numbersTill10 = numbers(10);
+for (const i for numbersTill10) {
+  // 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 }
 </code></pre>
 
-<p>We can now call the this function using <code>makeMap(docs, 'id')</code>, to build the map we desire.</p>
+<blockquote>
+<p>The <code>@@iterator</code> method is only called once at the beginning of the <code>for..of</code> loop. So the following is same as above</p>
+</blockquote>
 
-<h4 id="3-flatten-an-array-of-arrays">3. Flatten an array of arrays</h4>
-
-<p>A very common case. I have an array of arrays and I want to combine them into a single array.</p>
-
-<pre><code class="language-js">function flatten(arr) {
-  return arr.reduce((acc, current) =&gt; {
-    return acc.concat(current);
-  }, []);
+<pre><code class="language-js">for (const i for numbers(10)) {
+  // 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 }
-
-
-flatten([['1', '2'], ['3', 4], [{}, []]]) // =&gt; [ '1', '2', '3', 4, {}, [] ]
 </code></pre>
 
-<h4 id="4-doing-the-job-of-filter-quite-unnecessary">4. Doing the job of <code>filter()</code> - quite unnecessary :)</h4>
+<p>Since we know that the object has a <code>next</code> method which implements the details of iteration, we can simple call this method ourselves.</p>
 
-<p>From an array of players, filter those with with valid ids (<code>mongoId</code> here).</p>
+<pre><code class="language-js">const numbersTill5 = number(5);
+numbersTill5.next(); // { done: false, value : 1 }
+numbersTill5.next(); // { done: false, value : 2 }
+numbersTill5.next(); // { done: false, value : 3 }
+numbersTill5.next(); // { done: false, value : 4 }
+numbersTill5.next(); // { done: false, value : 5 }
+numbersTill5.next(); // { done: true }
+</code></pre>
 
-<pre><code class="language-js">game.players.reduce((acc, val) =&gt; {
-  if (is.existy(val.mongoId)) {
-    acc.push(val.mongoId);
+<blockquote>
+<p>This can be used to control the iteration externally, by passing values to <code>next</code> method.</p>
+</blockquote>
+
+<p>We can implement our custom iterators like above. However, JavaScript provides another way to create <code>iterables</code>.</p>
+
+<h2 id="generators">Generators</h2>
+
+<p>Generators are special function which when called return a <code>Generator</code> object. The <code>generator</code> object follows the iteration protocols. So to implement the above example using generators,</p>
+
+<pre><code class="language-js">function* generateNumbers(till = 100) {
+  let i = 1;
+  while (i &lt;= till) {
+    yield i;
+    i += 1;
   }
-  return acc;
-}, []);
+}
+
+const numbersTill10 = generateNumbers(10); // iterator
+// rest is same
 </code></pre>
 
-<h4 id="5-a-deep-object-assign">5. A deep <code>Object.assign</code></h4>
+<p>The value sent by <code>yield</code> (here <code>i</code>), will be the <code>value</code> stored in object returned by the <code>next</code> method. And when the generator finishes it returns <code>{ done: true }</code>.</p>
 
-<p><code>Object.assign</code> copies values from source objects to given object, but it does a shallow copy and also mutates the given object.</p>
+<p>It is very clear from the above example that Generators provide a concise way to create <code>iterables</code>. They abstract away the protocols, and we need to worry about the iteration logic only.</p>
 
-<p>I want a function (<code>deepAssign</code>), that would do a deep copy and would not mutate the given object.</p>
+<h2 id="conclusion">Conclusion</h2>
 
-<pre><code class="language-js">const source = {
-  l1: {
-    inside: true,
-    prop: 'in',
-  },
-  prop: 'value',
-};
-const target = {
-  prop: 'out',
-  l1: {
-    prop: 'inisde',
-  },
-}
+<p>Since we started this post with a hyperbole about traversing array. Its only fair that we include an example involving arrays. <code>Arrays</code> are already <code>iterable</code>, so we will create an <code>iterable</code> value mapper.</p>
 
-const shallow = Object.assign(source, target);
-/*
-shallow = {
-  &quot;l1&quot;: {
-    &quot;prop&quot;: &quot;inisde&quot;
-  },
-  &quot;prop&quot;: &quot;out&quot;
-}
-*/
-
-const deep = deepAssign(source, target);
-/*
-deep = {
-  &quot;l1&quot;: {
-    &quot;inside&quot;:true,
-    &quot;prop&quot;: &quot;inisde&quot;
-  },
-  &quot;prop&quot;: &quot;out&quot;
-}
-</code></pre>
-
-<pre><code class="language-js">function deepAssign(object, update, level = 0) {
-  if (level &gt; 5) {
-    throw new Error('Deep Assign going beyound five levels');
+<pre><code class="language-js">function* mapOver(arr, mapper = (v) =&gt; v) {
+  for (let i = 0; i &lt; arr.length; i += 1) {
+    yield mapper(arr[i]);
   }
+}
 
-  return Object.keys(update).reduce((acc, key) =&gt; {
-    const updatewith = update[key];
-    if (is.not.existy(updatewith)) {
-      return acc;
-    }
-
-    // lets just suppose `is` exists
-    if (is.object(updatewith) &amp;&amp; is.not.array(updatewith)) {
-      acc[key] = deepAssign(object[key], updatewith, level + 1);
-      return acc;
-    }
-
-    acc[key] = updatewith;
-    return acc;
-  }, Object.assign({}, object));
+const twices = mapOver([...numbers(5)], (v) =&gt; v + 2);
+for (const num of twices) {
+  // 2, 4, 6, 8, 10
 }
 </code></pre>
 
-<p>We are using recursion here and don&rsquo;t want to kill the <code>stack</code>, hence a simple check for - how many levels deep inside the source object we should care about.</p>
-
-<h4 id="6-chaining-promises">6. Chaining Promises</h4>
-
-<p>I have four async functions that have to be executed in series, feeding the result of the previous function into next.</p>
-
-<pre><code class="language-js">const arr = [fetchData, updateData, postData, showData];
-const response = arr.reduce((acc, current) =&gt; {
-  // (cue alarm sirens) no error handling
-  return acc.then(current));
-}, Promise.resolve(userId));
-
-response.then(data =&gt; {
-  // data is final response
-});
-</code></pre>
-
-<h3 id="that-s-pretty-much-it-folks">That&rsquo;s pretty much it folks.</h3>
-
-<p>I found several more examples, however they were following more or less the same storylines with a twist or two of their own.</p>
-
-<p>Finally, thanks for reading and if you have any magical use case of <code>reduce()</code> or if I have made any mistake in this post, I would love to know.</p>
+<blockquote>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax">Spread</a> (&hellip;) operator, by definition works on <code>iterables</code>.</p>
+</blockquote>
 
 
         
@@ -499,49 +420,49 @@ response.then(data =&gt; {
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fwww.akshendra.com%2fpost%2fmadlad-reduce%2f&amp;text=The%20beast%20that%20is%20%60Array.prototype.reduce%60&amp;via=akshendr" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fwww.akshendra.com%2fpost%2fiterators%2f&amp;text=Iterators%20in%20JavaScript&amp;via=akshendr" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//plus.google.com/share?url=https%3a%2f%2fwww.akshendra.com%2fpost%2fmadlad-reduce%2f" target="_blank" title="Share on Google Plus">
+        <a href="//plus.google.com/share?url=https%3a%2f%2fwww.akshendra.com%2fpost%2fiterators%2f" target="_blank" title="Share on Google Plus">
           <i class="fab fa-google-plus"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.akshendra.com%2fpost%2fmadlad-reduce%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.akshendra.com%2fpost%2fiterators%2f" target="_blank" title="Share on Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fwww.akshendra.com%2fpost%2fmadlad-reduce%2f&amp;title=The%20beast%20that%20is%20%60Array.prototype.reduce%60" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2fwww.akshendra.com%2fpost%2fiterators%2f&amp;title=Iterators%20in%20JavaScript" target="_blank" title="Share on Reddit">
           <i class="fab fa-reddit"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.akshendra.com%2fpost%2fmadlad-reduce%2f&amp;title=The%20beast%20that%20is%20%60Array.prototype.reduce%60" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fwww.akshendra.com%2fpost%2fiterators%2f&amp;title=Iterators%20in%20JavaScript" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fwww.akshendra.com%2fpost%2fmadlad-reduce%2f&amp;title=The%20beast%20that%20is%20%60Array.prototype.reduce%60" target="_blank" title="Share on StumbleUpon">
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fwww.akshendra.com%2fpost%2fiterators%2f&amp;title=Iterators%20in%20JavaScript" target="_blank" title="Share on StumbleUpon">
           <i class="fab fa-stumbleupon"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fwww.akshendra.com%2fpost%2fmadlad-reduce%2f&amp;description=The%20beast%20that%20is%20%60Array.prototype.reduce%60" target="_blank" title="Share on Pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fwww.akshendra.com%2fpost%2fiterators%2f&amp;description=Iterators%20in%20JavaScript" target="_blank" title="Share on Pinterest">
           <i class="fab fa-pinterest"></i>
         </a>
       </li>
@@ -562,13 +483,9 @@ response.then(data =&gt; {
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://www.akshendra.com/post/docs-on-fly/" data-toggle="tooltip" data-placement="top" title="Generating documentation on the fly in express">&larr; Previous Post</a>
+              <a href="https://www.akshendra.com/post/madlad-reduce/" data-toggle="tooltip" data-placement="top" title="The beast that is `Array.prototype.reduce`">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="https://www.akshendra.com/post/iterators/" data-toggle="tooltip" data-placement="top" title="Iterators in JavaScript">Next Post &rarr;</a>
-            </li>
           
         </ul>
       
