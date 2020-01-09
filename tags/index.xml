@@ -1,15 +1,88 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on ^_^</title>
-    <link>https://www.akshendra.com/tags/</link>
+    <link>https://akshendra.com/tags/</link>
     <description>Recent content in Tags on ^_^</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>meine@akshendra.com (Akshendra Pratap Singh)</managingEditor>
     <webMaster>meine@akshendra.com (Akshendra Pratap Singh)</webMaster>
+    <lastBuildDate>Sun, 29 Jul 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://www.akshendra.com/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://akshendra.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>iterators</title>
+      <link>https://akshendra.com/tags/iterators/</link>
+      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
+      <author>meine@akshendra.com (Akshendra Pratap Singh)</author>
+      <guid>https://akshendra.com/tags/iterators/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://akshendra.com/tags/javascript/</link>
+      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
+      <author>meine@akshendra.com (Akshendra Pratap Singh)</author>
+      <guid>https://akshendra.com/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>js</title>
+      <link>https://akshendra.com/tags/js/</link>
+      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
+      <author>meine@akshendra.com (Akshendra Pratap Singh)</author>
+      <guid>https://akshendra.com/tags/js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>node</title>
+      <link>https://akshendra.com/tags/node/</link>
+      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
+      <author>meine@akshendra.com (Akshendra Pratap Singh)</author>
+      <guid>https://akshendra.com/tags/node/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>functional</title>
+      <link>https://akshendra.com/tags/functional/</link>
+      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
+      <author>meine@akshendra.com (Akshendra Pratap Singh)</author>
+      <guid>https://akshendra.com/tags/functional/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reduce</title>
+      <link>https://akshendra.com/tags/reduce/</link>
+      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
+      <author>meine@akshendra.com (Akshendra Pratap Singh)</author>
+      <guid>https://akshendra.com/tags/reduce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>express</title>
+      <link>https://akshendra.com/tags/express/</link>
+      <pubDate>Sat, 09 Jun 2018 00:00:00 +0000</pubDate>
+      <author>meine@akshendra.com (Akshendra Pratap Singh)</author>
+      <guid>https://akshendra.com/tags/express/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webdev</title>
+      <link>https://akshendra.com/tags/webdev/</link>
+      <pubDate>Sat, 09 Jun 2018 00:00:00 +0000</pubDate>
+      <author>meine@akshendra.com (Akshendra Pratap Singh)</author>
+      <guid>https://akshendra.com/tags/webdev/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

@@ -1,72 +1,72 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>^_^</title>
-    <link>https://www.akshendra.com/</link>
+    <link>https://akshendra.com/</link>
     <description>Recent content on ^_^</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>meine@akshendra.com (Akshendra Pratap Singh)</managingEditor>
     <webMaster>meine@akshendra.com (Akshendra Pratap Singh)</webMaster>
-    <lastBuildDate>Fri, 09 Nov 2018 01:38:07 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 29 Jul 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://www.akshendra.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://akshendra.com/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>About</title>
-      <link>https://www.akshendra.com/page/about/</link>
-      <pubDate>Fri, 09 Nov 2018 01:38:07 +0530</pubDate>
-      <author>meine@akshendra.com (Akshendra Pratap Singh)</author>
-      <guid>https://www.akshendra.com/page/about/</guid>
-      <description>HEY!! its me. You were not expecting that, were you? Sorry for disappointing. Anyways, let me introduce myself. My name is Akshendra and I write about pages for other peoples&amp;rsquo; blog. No seriously! however I do this only part time.
-Primarily, I work as a Backend Developer at Quizizz.com (really amazing website *no bias). I love music and I like to code things. I have build a few things which you can check out here, if you haven&amp;rsquo;t already.</description>
-    </item>
-    
-    <item>
-      <title>Things</title>
-      <link>https://www.akshendra.com/page/things/</link>
-      <pubDate>Fri, 09 Nov 2018 01:32:24 +0530</pubDate>
-      <author>meine@akshendra.com (Akshendra Pratap Singh)</author>
-      <guid>https://www.akshendra.com/page/things/</guid>
-      <description> Habitual  A simple habbit tracker for daily activites. Using  VueJS Vuex  Github: https://github.com/akshendra/habitual  Cryptonium  A chrome new tab extension that shows CryptoCurreny prices Using  ReactJs Redux   Serene  Clean conky (linux desktop widges) theme Using  Lua Python  Github: https://github.com/akshendra/Serene-Conky  MapOfEnv  A npm package to map environment variables to JS types Github: https://github.com/akshendra/mapofenv  </description>
-    </item>
     
     <item>
       <title>Iterators in JavaScript</title>
-      <link>https://www.akshendra.com/post/iterators/</link>
-      <pubDate>Sun, 29 Jul 2018 00:59:10 +0530</pubDate>
+      <link>https://akshendra.com/posts/iterators-i/</link>
+      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
       <author>meine@akshendra.com (Akshendra Pratap Singh)</author>
-      <guid>https://www.akshendra.com/post/iterators/</guid>
-      <description>Many a times you wake up and realize that today you will be traversing through an array or maybe many arrays. But you don&amp;rsquo;t worry about it, you have done it before and it wasn&amp;rsquo;t that difficult. You also have a lot of options, you can use the good old loops, or the wonderful map, reduce, fitler. OR you can use the iterators.
+      <guid>https://akshendra.com/posts/iterators-i/</guid>
+      <description>Many a times you wake up and realize that today you will be traversing through an array or maybe many arrays. But you don&#39;t worry about it, you have done it before and it wasn&#39;t that difficult. You also have a lot of options, you can use the good old loops, or the wonderful map, reduce, fitler. OR you can use the iterators.
 Iterator is a design pattern that allows us to traverse over a list or collection.</description>
     </item>
     
     <item>
-      <title>The beast that is `Array.prototype.reduce`</title>
-      <link>https://www.akshendra.com/post/madlad-reduce/</link>
-      <pubDate>Sat, 23 Jun 2018 00:59:10 +0530</pubDate>
+      <title>The beast that is Array.prototype.reduce</title>
+      <link>https://akshendra.com/posts/the-madlad-reduce/</link>
+      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
       <author>meine@akshendra.com (Akshendra Pratap Singh)</author>
-      <guid>https://www.akshendra.com/post/madlad-reduce/</guid>
+      <guid>https://akshendra.com/posts/the-madlad-reduce/</guid>
       <description>reduce() is an absolute beast of a method when it comes to functional style programming in JavaScript. The more you use it, the more you see use cases popping everywhere for it.
 I recently realized, that it has become my goto method, whenever I have to deal with arrays. So I looked through bunch of my code and found a lot of examples, some of which I will list in this post.</description>
     </item>
     
     <item>
       <title>Generating documentation on the fly in express</title>
-      <link>https://www.akshendra.com/post/docs-on-fly/</link>
-      <pubDate>Sat, 09 Jun 2018 00:59:10 +0530</pubDate>
+      <link>https://akshendra.com/posts/docs-on-fly/</link>
+      <pubDate>Sat, 09 Jun 2018 00:00:00 +0000</pubDate>
       <author>meine@akshendra.com (Akshendra Pratap Singh)</author>
-      <guid>https://www.akshendra.com/post/docs-on-fly/</guid>
-      <description>I little while ago, I decided to generate docs for some HTTP APIs I was about to build. The APIs were going to be used internally, so I didn&amp;rsquo;t want to commit to any of the online solutions, like API Blueprint, Apiary or Swagger. And setting up something from scratch would have been, &amp;hellip; bit much. Also, I wanted the docs integrated within the code, avoiding any kind of context switch just to write documentation.</description>
+      <guid>https://akshendra.com/posts/docs-on-fly/</guid>
+      <description>I little while ago, I decided to generate docs for some HTTP APIs I was about to build. The APIs were going to be used internally, so I didn&#39;t want to commit to any of the online solutions, like API Blueprint, Apiary or Swagger. And setting up something from scratch would have been, &amp;hellip; bit much. Also, I wanted the docs integrated within the code, avoiding any kind of context switch just to write documentation.</description>
     </item>
     
     <item>
       <title>Reloading the express server without nodemon</title>
-      <link>https://www.akshendra.com/post/express-reload/</link>
-      <pubDate>Tue, 05 Jun 2018 00:59:10 +0530</pubDate>
+      <link>https://akshendra.com/posts/express-reload/</link>
+      <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
       <author>meine@akshendra.com (Akshendra Pratap Singh)</author>
-      <guid>https://www.akshendra.com/post/express-reload/</guid>
+      <guid>https://akshendra.com/posts/express-reload/</guid>
       <description>I have been using nodemon for reloading express server and any other NodeJs code since I started writing backend NodeJS code. It does what it says on the label and does it pretty well. However, the problem with nodemon is lack of control and the fact that it seems to kill the process. You write a console.log statement and it will restart your whole server, which is all fine and dandy if your server starts quickly.</description>
+    </item>
+    
+    <item>
+      <title>About Me</title>
+      <link>https://akshendra.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>meine@akshendra.com (Akshendra Pratap Singh)</author>
+      <guid>https://akshendra.com/about/</guid>
+      <description>HEY!! its me. You were not expecting that, were you? Sorry for disappointing. Anyways, let me introduce myself. My name is Akshendra and I write about pages for other peoples&amp;rsquo; blog. No seriously! however I do this only part time.
+Primarily, I work as a Backend Developer at Quizizz.com (really amazing website no bias). I love music and I like to code things. I have build a few things which you can check out here, if you haven&#39;t already.</description>
+    </item>
+    
+    <item>
+      <title>Things</title>
+      <link>https://akshendra.com/things/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>meine@akshendra.com (Akshendra Pratap Singh)</author>
+      <guid>https://akshendra.com/things/</guid>
+      <description>Habitual  A simple habbit tracker for daily activites. Using  VueJS Vuex   Github: https://github.com/akshendra/habitual  Serene  Clean conky linux desktop widgetstheme Using  Lua Python   Github: https://github.com/akshendra/Serene-Conky  MapOfEnv  A npm package to map environment variables to JS types Github: https://github.com/akshendra/mapofenv  </description>
     </item>
     
   </channel>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>webdev on ^_^</title>
+    <link>https://akshendra.com/tags/webdev/</link>
+    <description>Recent content in webdev on ^_^</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>meine@akshendra.com (Akshendra Pratap Singh)</managingEditor>
+    <webMaster>meine@akshendra.com (Akshendra Pratap Singh)</webMaster>
+    <lastBuildDate>Sat, 09 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://akshendra.com/tags/webdev/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Generating documentation on the fly in express</title>
+      <link>https://akshendra.com/posts/docs-on-fly/</link>
+      <pubDate>Sat, 09 Jun 2018 00:00:00 +0000</pubDate>
+      <author>meine@akshendra.com (Akshendra Pratap Singh)</author>
+      <guid>https://akshendra.com/posts/docs-on-fly/</guid>
+      <description>I little while ago, I decided to generate docs for some HTTP APIs I was about to build. The APIs were going to be used internally, so I didn&#39;t want to commit to any of the online solutions, like API Blueprint, Apiary or Swagger. And setting up something from scratch would have been, &amp;hellip; bit much. Also, I wanted the docs integrated within the code, avoiding any kind of context switch just to write documentation.</description>
+    </item>
+    
+    <item>
+      <title>Reloading the express server without nodemon</title>
+      <link>https://akshendra.com/posts/express-reload/</link>
+      <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
+      <author>meine@akshendra.com (Akshendra Pratap Singh)</author>
+      <guid>https://akshendra.com/posts/express-reload/</guid>
+      <description>I have been using nodemon for reloading express server and any other NodeJs code since I started writing backend NodeJS code. It does what it says on the label and does it pretty well. However, the problem with nodemon is lack of control and the fact that it seems to kill the process. You write a console.log statement and it will restart your whole server, which is all fine and dandy if your server starts quickly.</description>
+    </item>
+    
+  </channel>
+</rss>

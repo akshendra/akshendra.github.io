@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Reloading the express server without nodemon - ^_^</title>
+  <meta name="description" content="I have been using nodemon for reloading express server and any other NodeJs code since I started writing backend NodeJS code. It does what it says on the label and does it pretty well. However, the problem with nodemon is lack of control and the fact that it seems to kill the process. You write a console.log statement and it will restart your whole server, which is all fine and dandy if your server starts quickly.">
+  <meta name="author" content="Akshendra Pratap Singh"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "^_^",
+    
+    "url": "https:\/\/akshendra.com"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/akshendra.com"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/akshendra.com",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/akshendra.com\/posts\/express-reload\/",
+          "name": "Reloading the express server without nodemon"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Akshendra Pratap Singh"
+  },
+  "headline": "Reloading the express server without nodemon",
+  "description" : "I have been using nodemon for reloading express server and any other NodeJs code since I started writing backend NodeJS code. It does what it says on the label and does it pretty well. However, the problem with nodemon is lack of control and the fact that it seems to kill the process. You write a console.log statement and it will restart your whole server, which is all fine and dandy if your server starts quickly.",
+  "inLanguage" : "en",
+  "wordCount":  1123 ,
+  "datePublished" : "2018-06-05T00:00:00",
+  "dateModified" : "2018-06-05T00:00:00",
+  "image" : "https:\/\/akshendra.com\/img\/octocat.png",
+  "keywords" : [ "node, webdev, express" ],
+  "mainEntityOfPage" : "https:\/\/akshendra.com\/posts\/express-reload\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/akshendra.com",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/akshendra.com\/img\/octocat.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Reloading the express server without nodemon" />
+<meta property="og:description" content="I have been using nodemon for reloading express server and any other NodeJs code since I started writing backend NodeJS code. It does what it says on the label and does it pretty well. However, the problem with nodemon is lack of control and the fact that it seems to kill the process. You write a console.log statement and it will restart your whole server, which is all fine and dandy if your server starts quickly.">
+<meta property="og:image" content="https://akshendra.com/img/octocat.png" />
+<meta property="og:url" content="https://akshendra.com/posts/express-reload/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="^_^" />
+
+  <meta name="twitter:title" content="Reloading the express server without nodemon" />
+  <meta name="twitter:description" content="I have been using nodemon for reloading express server and any other NodeJs code since I started writing backend NodeJS code. It does what it says on the label and does it pretty well. However, the …">
+  <meta name="twitter:image" content="https://akshendra.com/img/octocat.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@akshendr" />
+  <meta name="twitter:creator" content="@akshendr" />
+  <link href='https://akshendra.com/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.62.2" />
+  <link rel="alternate" href="https://akshendra.com/index.xml" type="application/rss+xml" title="^_^"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://akshendra.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://akshendra.com/css/highlight.min.css" /><link rel="stylesheet" href="https://akshendra.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://akshendra.com">^_^</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Things" href="/things/">Things</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="^_^" href="https://akshendra.com">
+            <img class="avatar-img" src="https://akshendra.com/img/octocat.png" alt="^_^" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Reloading the express server without nodemon</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>I have been using <code>nodemon</code> for reloading express server and any other NodeJs code since I started writing backend NodeJS code. It does what it says on the label and does it pretty well. However, the problem with <code>nodemon</code> is lack of control and the fact that it seems to kill the process. You write a <code>console.log</code> statement and it will restart your whole server, which is all fine and dandy if your server starts quickly. But the situation becomes frustrating when restarting the server means reconnecting to a lot of external services.</p>
+<h3 id="code-to-explain-what-i-am-talkingabout">Code to explain, what I am talking about</h3>
+<p>We start with a pretty simple project with the following directory structure</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">.
+├── boot.js
+├── index.js
+├── package.json
+├── routes
+│   └── index.js
+└── server.js
+</code></pre></div><p><code>index.js</code> is the main script. We call <code>boot()</code> here with makes the connection to external services. Once we are connected, we start the <code>server()</code> and listen at port <code>3000</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">boot</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./boot&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./server&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">debug</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;debug&#39;</span><span class="p">)</span><span class="p">(</span><span class="s1">&#39;app&#39;</span><span class="p">)</span><span class="p">;</span>
+
+<span class="nx">boot</span><span class="p">(</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">server</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="nx">app</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;Started on 3000&#39;</span><span class="p">)</span><span class="p">;</span>
+    <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">)</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+</code></pre></div><p><code>boot.js</code> makes the connections to external service, which can be a database or a queue. To simulate that, I am just using a promise that will resolve in 10 seconds.</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">debug</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;debug&#39;</span><span class="p">)</span><span class="p">(</span><span class="s1">&#39;app&#39;</span><span class="p">)</span><span class="p">;</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">boot</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;Connecting to the satellites...&#39;</span><span class="p">)</span><span class="p">;</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="p">(</span><span class="nx">resolve</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;Connected to satellites...&#39;</span><span class="p">)</span><span class="p">;</span>
+      <span class="nx">resolve</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="p">}</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span><span class="p">;</span>
+</code></pre></div><p><code>server.js</code> create an <code>express</code> app, adds all the middleware required and simply return the app.</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">)</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">routes</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./routes&#39;</span><span class="p">)</span><span class="p">;</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">express</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Nothing here...&#39;</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+
+  <span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="nx">routes</span><span class="p">)</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="nx">app</span><span class="p">;</span>
+<span class="p">}</span><span class="p">;</span>
+</code></pre></div><p>Now the <code>route/index.js</code>, a simple route that is just silly.</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">express</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;express&#39;</span><span class="p">)</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">router</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">express</span><span class="p">.</span><span class="nx">Router</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+
+<span class="nx">router</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/silly&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">res</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s1">&#39;Now, I’ve noticed a tendency for this programme to get rather silly&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span><span class="p">)</span><span class="p">;</span>
+
+</code></pre></div><h3 id="i-like-your-code-but-whatnow">I like your code, but what now?</h3>
+<p>Well, to start the server we can use <code>nodemon index.js</code>.</p>
+<p><img src="https://cdn-images-1.medium.com/max/800/1*8el_nMWQac1GXywI0kapow.gif" alt="Frustation"></p>
+<p>As it is clearly visible, the app connects to external service (satellites) every time any change to the code is being made (noted by nodemon), which takes 10s + whatever extra time needed to restart the server.</p>
+<h3 id="now-thesolution">Now the solution</h3>
+<p>To build something that can restart the server when the code is changed, we need a way to listen to file changes. NodeJS <code>fs</code> module does give facility to watch over files, but there is something better, <a href="https://github.com/paulmillr/chokidar"><code>chokidar</code></a>.</p>
+<p>Using <code>chokidar</code> we are going to listen for any changes to <code>routes/index.js</code>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">chokidar</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="s1">&#39;./routes&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">at</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">event</span> <span class="o">===</span> <span class="s1">&#39;add&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;Watching for&#39;</span><span class="p">,</span> <span class="nx">at</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">event</span> <span class="o">===</span> <span class="s1">&#39;change&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;Changes at&#39;</span><span class="p">,</span> <span class="nx">at</span><span class="p">)</span><span class="p">;</span>
+    <span class="nx">restart</span><span class="p">(</span><span class="p">)</span><span class="p">;</span> <span class="c1">// assume that this exists
+</span><span class="c1"></span>  <span class="p">}</span>
+<span class="p">}</span><span class="p">)</span><span class="p">;</span>
+</code></pre></div><p>Pretty straightforward. Now we need to figure out what to do in case of a restart. One of the first thing that comes to my mind is a way to <code>restart</code> the express server. As shown in <code>index.js</code>, we are starting an express app at port <code>3000</code>. Surely we can't start an express app at port <code>3000</code> again. We need to stop this app first.</p>
+<p>From <code>express</code> documentation, <code>app.listen</code> is basically doing this</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">app</span><span class="p">.</span><span class="nx">listen</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="k">this</span><span class="p">)</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">server</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span><span class="p">;</span>
+</code></pre></div><p>So, <code>http.Server</code> is what we need to stop. And by the grace of god we have a <code>close</code> method. Let's read the docs,</p>
+<blockquote>
+<p>Stops the server from accepting new connections and keeps existing connections.
+This function is asynchronous, the server is finally closed when all connections are ended and the server emits a &lsquo;<a href="https://nodejs.org/api/net.html#net_event_close">close</a>&rsquo; event.</p>
+</blockquote>
+<p>Oh, so all the connection need to be <code>closed</code> before we attempt to close the server. Okay, we need a way to monitor all the connections and manually destroy them if required. We will use <code>server.on('connection')</code> to get access to all the connections.</p>
+<p>Now that we have a little bit of state to maintain, we will use this very simple object for that,</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">server</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nx">sockets</span><span class="o">:</span> <span class="p">[</span><span class="p">]</span><span class="p">,</span>
+<span class="p">}</span><span class="p">;</span>
+</code></pre></div><p>We will start the server like this (remember <code>server.js</code> will return <code>express()</code> app).</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">start</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">state</span><span class="p">.</span><span class="nx">server</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./server&#39;</span><span class="p">)</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;Started on 3000&#39;</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+  <span class="nx">state</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">socket</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;Add socket&#39;</span><span class="p">,</span> <span class="nx">state</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="p">;</span>
+    <span class="nx">state</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">socket</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// At the end will destroy all the sockets.
+</span><span class="c1"></span><span class="nx">state</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="p">(</span><span class="nx">socket</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;Destroying socket&#39;</span><span class="p">,</span> <span class="nx">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">socket</span><span class="p">.</span><span class="nx">destroyed</span> <span class="o">===</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">socket</span><span class="p">.</span><span class="nx">destroy</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span><span class="p">)</span><span class="p">;</span>
+</code></pre></div><p><em>Before we go any further notice, the <code>require('./server')</code> inside the function <code>start</code></em></p>
+<h3 id="this-is-done-to-avoid-requirecache">This is done to avoid require cache</h3>
+<p>We also need to take care to <code>require</code> (CommonJS) cache. As an optimisation, <code>require</code> caches your code at the module level. Once it encounters a <code>require</code> it will compile the code inside the file and put the result in a cache. Next time it encounters the same <code>require</code> it will use the result saved in the cache.</p>
+<p>This breaks all our plans. Since the changed code will never be loaded again. We should invalidate the cache, which is basically as simple as deleting the cached result.</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">pathCheck</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="nx">id</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;routes&#39;</span><span class="p">)</span><span class="p">)</span> <span class="o">||</span>
+    <span class="nx">id</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;server.js&#39;</span><span class="p">)</span><span class="p">)</span>
+  <span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">require</span><span class="p">.</span><span class="nx">cache</span><span class="p">)</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">pathCheck</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// delete selectively
+</span><span class="c1"></span>    <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;Reloading&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="p">)</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="nx">require</span><span class="p">.</span><span class="nx">cache</span><span class="p">[</span><span class="nx">id</span><span class="p">]</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span><span class="p">)</span><span class="p">;</span>
+</code></pre></div><p>That's it basically, we have all the ingredients ready. All we have to do now is put them in the correct order.</p>
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">debug</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;debug&#39;</span><span class="p">)</span><span class="p">(</span><span class="s1">&#39;app&#39;</span><span class="p">)</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">chokidar</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;chokidar&#39;</span><span class="p">)</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">boot</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./boot&#39;</span><span class="p">)</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">server</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+  <span class="nx">sockets</span><span class="o">:</span> <span class="p">[</span><span class="p">]</span><span class="p">,</span>
+<span class="p">}</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">start</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">state</span><span class="p">.</span><span class="nx">server</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./server&#39;</span><span class="p">)</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span> <span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;Started on 3000&#39;</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+  <span class="nx">state</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;connection&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">socket</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;Add socket&#39;</span><span class="p">,</span> <span class="nx">state</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="p">;</span>
+    <span class="nx">state</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">socket</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">pathCheck</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="nx">id</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;routes&#39;</span><span class="p">)</span><span class="p">)</span> <span class="o">||</span>
+    <span class="nx">id</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;server.js&#39;</span><span class="p">)</span><span class="p">)</span>
+  <span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">restart</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// clean the cache
+</span><span class="c1"></span>  <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">require</span><span class="p">.</span><span class="nx">cache</span><span class="p">)</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">pathCheck</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;Reloading&#39;</span><span class="p">,</span> <span class="nx">id</span><span class="p">)</span><span class="p">;</span>
+      <span class="k">delete</span> <span class="nx">require</span><span class="p">.</span><span class="nx">cache</span><span class="p">[</span><span class="nx">id</span><span class="p">]</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+
+  <span class="nx">state</span><span class="p">.</span><span class="nx">sockets</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="p">(</span><span class="nx">socket</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;Destroying socket&#39;</span><span class="p">,</span> <span class="nx">index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">socket</span><span class="p">.</span><span class="nx">destroyed</span> <span class="o">===</span> <span class="kc">false</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">socket</span><span class="p">.</span><span class="nx">destroy</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+
+  <span class="nx">state</span><span class="p">.</span><span class="nx">sockets</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span><span class="p">;</span>
+
+  <span class="nx">state</span><span class="p">.</span><span class="nx">server</span><span class="p">.</span><span class="nx">close</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;Server is closed&#39;</span><span class="p">)</span><span class="p">;</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;\n----------------- restarting -------------&#39;</span><span class="p">)</span><span class="p">;</span>
+    <span class="nx">start</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">boot</span><span class="p">(</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="p">(</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">start</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+    <span class="nx">chokidar</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="s1">&#39;./routes&#39;</span><span class="p">)</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">at</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">event</span> <span class="o">===</span> <span class="s1">&#39;add&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;Watching for&#39;</span><span class="p">,</span> <span class="nx">at</span><span class="p">)</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="k">if</span> <span class="p">(</span><span class="nx">event</span> <span class="o">===</span> <span class="s1">&#39;change&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">debug</span><span class="p">(</span><span class="s1">&#39;Changes at&#39;</span><span class="p">,</span> <span class="nx">at</span><span class="p">)</span><span class="p">;</span>
+        <span class="nx">restart</span><span class="p">(</span><span class="p">)</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">)</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">debug</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="p">;</span>
+  <span class="p">}</span><span class="p">)</span><span class="p">;</span>
+</code></pre></div><p>The result,</p>
+<p><img src="https://cdn-images-1.medium.com/max/800/1*mzFub3kTFhEcLOHR9z6Bjg.gif" alt="Better"></p>
+<blockquote>
+<p>This has no error handling, so if your app crashes, it crashes. nodemon does handle crashes. You can easily combine nodemon here by making it ignore the files we are monitoring manually.
+If you are using mongoose, you might encounter an error saying something like <code>error recompiling model</code>. Mongoose too maintains a cache of models. You can invalidate it too, by just initialising the object to empty object <code>mongoose.connection.models = {}; mongoose.models = {};</code>.</p>
+</blockquote>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://akshendra.com/tags/node/">node</a>&nbsp;
+            
+              <a href="https://akshendra.com/tags/webdev/">webdev</a>&nbsp;
+            
+              <a href="https://akshendra.com/tags/express/">express</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fakshendra.com%2fposts%2fexpress-reload%2f&amp;text=Reloading%20the%20express%20server%20without%20nodemon&amp;via=akshendr" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fakshendra.com%2fposts%2fexpress-reload%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fakshendra.com%2fposts%2fexpress-reload%2f&amp;title=Reloading%20the%20express%20server%20without%20nodemon" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fakshendra.com%2fposts%2fexpress-reload%2f&amp;title=Reloading%20the%20express%20server%20without%20nodemon" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fakshendra.com%2fposts%2fexpress-reload%2f&amp;title=Reloading%20the%20express%20server%20without%20nodemon" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fakshendra.com%2fposts%2fexpress-reload%2f&amp;description=Reloading%20the%20express%20server%20without%20nodemon" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+            
+          
+
+          
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                
+                
+                    <li><a href="/posts/iterators-i/">Iterators in JavaScript</a></li>
+                
+                    <li><a href="/posts/the-madlad-reduce/">The beast that is Array.prototype.reduce</a></li>
+                
+                    <li><a href="/posts/docs-on-fly/">Generating documentation on the fly in express</a></li>
+                
+              </ul>
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+          
+            <li class="next">
+              <a href="https://akshendra.com/posts/docs-on-fly/" data-toggle="tooltip" data-placement="top" title="Generating documentation on the fly in express">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:meine@akshendra.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/akshendra" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/kabtr" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/akshendr" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/akshendra-pratap-8b8b75a6" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/4130281/akshendra-pratap" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="https://akshendra.com">Akshendra Pratap Singh</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2018
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://akshendra.com">^_^</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.62.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://akshendra.com/js/main.js"></script>
+<script src="https://akshendra.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://akshendra.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+
