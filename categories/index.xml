@@ -2,13 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on ^_^</title>
-    <link>https://akshendra.com/categories/</link>
+    <link>https://www.akshendra.com/categories/</link>
     <description>Recent content in Categories on ^_^</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>meine@akshendra.com (Akshendra Pratap Singh)</managingEditor>
     <webMaster>meine@akshendra.com (Akshendra Pratap Singh)</webMaster>
     
-	<atom:link href="https://akshendra.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.akshendra.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
